@@ -1,226 +1,282 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>
-        // 使用JavaScript获取屏幕宽度
-        var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        // 将屏幕宽度输出到控制台
-        console.log("Screen width: " + screenWidth + "px");
+      // 使用JavaScript获取屏幕宽度
+      var screenWidth =
+        window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth;
+      // 将屏幕宽度输出到控制台
+      console.log("Screen width: " + screenWidth + "px");
     </script>
-    <title>小美证件照</title>
+    <title>儿童牙医游戏</title>
     <style>
-        body {
-            font-family: "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Apple WebExp Icons Custom", "Apple Legacy Chevron", "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #1d1d1f;
+      body {
+        font-family:
+          "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro",
+          "SF Pro Icons", "Apple WebExp Icons Custom", "Apple Legacy Chevron",
+          "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        color: #1d1d1f;
+      }
+
+      h2 {
+        font-size: 20px;
+        line-height: 1.2;
+        font-weight: 700;
+        letter-spacing: 0.024em;
+        font-family:
+          "SF Pro Display", "SF Pro Icons", "Apple WebExp Icons Custom",
+          "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+
+      p {
+        line-height: 1.6;
+      }
+
+      .app-container {
+        display: -webkit-flex;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        /* flex-wrap: wrap */
+
+        margin: 20px;
+      }
+
+      .app-icon {
+        max-width: 157px;
+        max-height: 157px;
+        width: auto;
+        height: auto;
+
+        /* flex-shrink: 2; */
+
+        margin-right: 20px;
+        border-radius: 22.5%;
+        overflow: hidden;
+      }
+
+      .app-icon img {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      .app-title {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      .app-desc {
+        /* margin: 20px auto; */
+      }
+
+      .row {
+        display: -webkit-flex;
+        display: flex;
+        justify-content: space-around;
+        /* 水平居中 */
+        align-items: center;
+        /* 垂直居中 */
+        flex-wrap: wrap;
+      }
+
+      /* 当屏幕宽度小于500像素时应用这些样式 */
+      @media screen and (max-width: 499px) {
+        .container {
+          max-width: 100%;
+          margin: 0px auto;
+          padding: 20px;
+          background-color: #fff;
         }
 
-        h2 {
-            font-size: 20px;
-            line-height: 1.2;
-            font-weight: 700;
-            letter-spacing: .024em;
-            font-family: "SF Pro Display", "SF Pro Icons", "Apple WebExp Icons Custom", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        .column {
+          margin: 10px auto;
+          background-color: white;
         }
 
-        p {
-            line-height: 1.6;
+        .screenshot {
+          width: 260px;
+          height: auto;
+          display: block;
+          border-radius: 20px;
+          overflow: hidden;
+        }
+      }
+
+      /* 当屏幕宽度大于500像素时应用这些样式 */
+      @media screen and (min-width: 500px) {
+        .container {
+          max-width: 1100px;
+          margin: 20px auto;
+          padding: 20px;
+          background-color: #fff;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .app-container {
-            display: -webkit-flex;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            /* flex-wrap: wrap */
-
-            margin: 20px;
+        .column {
+          margin: 10px auto;
+          flex: auto;
+          background-color: white;
         }
 
-        .app-icon {
-            max-width: 157px;
-            max-height: 157px;
-            width: auto;
-            height: auto;
-
-            /* flex-shrink: 2; */
-
-            margin-right: 20px;
-            border-radius: 22.5%;
-            overflow: hidden;
+        .screenshot {
+          width: 200px;
+          height: auto;
+          display: block;
+          border-radius: 20px;
+          overflow: hidden;
         }
+      }
 
-        .app-icon img {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
+      ul {
+        list-style-type: none;
+        padding: 0px;
+      }
 
-        .app-title {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
+      li {
+        line-height: 2;
+      }
 
-        .app-desc {
-            /* margin: 20px auto; */
-        }
+      footer {
+        text-align: center;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #ccc;
+        font-size: 14px;
+      }
 
-        .row {
-            display: -webkit-flex;
-            display: flex;
-            justify-content: space-around;
-            /* 水平居中 */
-            align-items: center;
-            /* 垂直居中 */
-            flex-wrap: wrap;
-        }
-
-        /* 当屏幕宽度小于500像素时应用这些样式 */
-        @media screen and (max-width: 499px) {
-
-            .container {
-                max-width: 100%;
-                margin: 0px auto;
-                padding: 20px;
-                background-color: #fff;
-            }
-
-            .column {
-                margin: 10px auto;
-                background-color: white;
-            }
-
-            .screenshot {
-                width: 260px;
-                height: auto;
-                display: block;
-                border-radius: 20px;
-                overflow: hidden;
-            }
-        }
-
-        /* 当屏幕宽度大于500像素时应用这些样式 */
-        @media screen and (min-width: 500px) {
-
-            .container {
-                max-width: 1100px;
-                margin: 20px auto;
-                padding: 20px;
-                background-color: #fff;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            }
-
-            .column {
-                margin: 10px auto;
-                flex: auto;
-                background-color: white;
-            }
-
-            .screenshot {
-                width: 200px;
-                height: auto;
-                display: block;
-                border-radius: 20px;
-                overflow: hidden;
-            }
-        }
-
-
-
-        ul {
-            list-style-type: none;
-            padding: 0px;
-        }
-
-        li {
-            line-height: 2;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #ccc;
-            font-size: 14px;
-        }
-
-        .icp {
-            text-decoration: none; /* Removes the underline */
-            color: black
-        }
+      .icp {
+        text-decoration: none; /* Removes the underline */
+        color: black;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
+      function getQueryParam(param) {
+        var searchParams = new URLSearchParams(window.location.search);
+        return searchParams.get(param);
+      }
+      // 根据语言参数跳转到不同页面
+      function redirectToLanguagePage() {
+        // 假设URL是 http://example.com/?lang=en
+        var lang = getQueryParam("lang");
+        console.log("language: " + lang); // 输出: en
 
-        function getQueryParam(param) {
-            var searchParams = new URLSearchParams(window.location.search);
-            return searchParams.get(param);
+        if (lang === "zh") {
+          //window.location.href = 'index.html';
+        } else {
+          window.location.href = "index_en.html";
         }
-        // 根据语言参数跳转到不同页面
-        function redirectToLanguagePage() {
+      }
 
-            // 假设URL是 http://example.com/?lang=en
-            var lang = getQueryParam('lang');
-            console.log("language: " + lang); // 输出: en
-
-            if (lang === 'zh') {
-                //window.location.href = 'index.html';
-            } else {
-                window.location.href = 'index_en.html';
-            }
-        }
-
-        // 调用函数进行跳转
-        redirectToLanguagePage();
+      // 调用函数进行跳转
+      redirectToLanguagePage();
     </script>
 
     <div class="container">
-        <!-- 应用程序图标 -->
-        <div class="app-container">
-            <div class="app-icon">
-                <img src="appicon.jpg" alt="App Icon">
-            </div>
-            <h1 class="app-title">动物牙医</h1>
+      <!-- 应用程序图标 -->
+      <div class="app-container">
+        <div class="app-icon">
+          <img src="appicon.jpg" alt="App Icon" />
         </div>
+        <h1 class="app-title">儿童牙医游戏</h1>
+      </div>
 
-        <div class="app-desc">
-            <p>小美证件照是一款专为用户提供方便、快捷、高质量证件照服务的手机应用。无论您是在家、在办公室还是在旅途中，只需使用手机拍摄即可轻松制作符合规范的证件照。</p>
+      <div class="app-desc">
+        <p>通过游戏帮助小朋友学习健康习惯！</p>
+      </div>
+
+      <p>
+        儿童牙医游戏是一款专为3-8岁儿童设计的教育角色扮演体验。通过模拟真实的牙科诊所，儿童可以帮助可爱的动物朋友解决牙齿问题，同时克服对牙医的恐惧。
+      </p>
+
+      <h2>主要功能</h2>
+      <ul>
+        <li>
+          <strong>教育角色扮演：</strong
+          >儿童在有趣、无压力的环境中学习口腔卫生和牙科工具的相关知识。
+        </li>
+        <li>
+          <strong>三个动物患者：</strong
+          >治疗鳄鱼、兔子和河马，每个都有独特的牙齿问题。
+        </li>
+        <li>
+          <strong>交互式工具：</strong
+          >通过直观的拖拽控制使用X光机、牙钻、牙刷等多种工具。
+        </li>
+        <li>
+          <strong>精美动画：</strong
+          >流畅的高质量缩放效果使诊所栩栩如生，引人入胜。
+        </li>
+      </ul>
+
+      <h2>安全与质量</h2>
+      <ul>
+        <li><strong>100%无广告：</strong>保证纯净的游戏体验，零第三方广告。</li>
+        <li>
+          <strong>儿童安全设计：</strong
+          >不收集数据，所有外部链接和购买都有安全的家长控制。
+        </li>
+        <li>
+          <strong>简单导航：</strong>专为幼儿和学龄前儿童设计，可独立游玩。
+        </li>
+      </ul>
+
+      <h2>游戏玩法</h2>
+      <ul>
+        <li>选择患者：从等候室选择一个动物朋友。</li>
+        <li>诊断：使用X光机查找隐藏的牙齿问题。</li>
+        <li>治疗：刷去细菌、清理蛀牙或装上牙套来修复他们的笑容。</li>
+        <li>完成：看到动物的快乐反应，因为他们的牙齿现在健康了！</li>
+      </ul>
+
+      <h2>截图</h2>
+
+      <div class="row">
+        <div class="column">
+          <img class="screenshot" src="1.jpg" alt="Screenshot 1" />
         </div>
-
-        <h2>产品特色：</h2>
-        <ul>
-            <li>1. **完全免费**：不要求任何购买就能导出高清照片。</li>
-            <li>2. **简单易用**：只需三步就能出片。选尺寸，拍照片，选底色，智能抠图一键导出。</li>
-            <li>3. **上百种证件照规格**：除了一寸照、两寸照等常规尺寸以外，还提供包括毕业照、学位照、入学照等学生类证照，以及会计、考研、计算机、公务员、医护、幼师、语言类考试等各类专业证照。</li>
-            <li>4. **美颜功能**：内置美颜滤镜，可帮助您调整肤色、光线和磨皮效果，让您拍摄的证件照更加美观。</li>
-            <li>5. **内置智能算法**：一键抠图秒出片，方便快捷。</li>
-            <li>6. **高质量输出**：应用采用高清晰度拍摄和输出，保证证件照的清晰度和准确性。</li>
-        </ul>
-
-        <p>无论您是需要制作新的证件照，还是需要更新现有的照片，小美证件照都能满足您的需求，为您提供便捷的证件照服务。</p>
-
-        <h2>效果图</h2>
-
-        <div class="row">
-            <div class="column"><img class="screenshot" src="1.jpg" alt="Screenshot 1"></div>
-            <div class="column"><img class="screenshot" src="2.jpg" alt="Screenshot 2"></div>
-            <div class="column"><img class="screenshot" src="3.jpg" alt="Screenshot 3"></div>
-            <div class="column"><img class="screenshot" src="4.jpg" alt="Screenshot 4"></div>
-            <div class="column"><img class="screenshot" src="5.jpg" alt="Screenshot 5"></div>
+        <div class="column">
+          <img class="screenshot" src="2.jpg" alt="Screenshot 2" />
         </div>
+        <div class="column">
+          <img class="screenshot" src="3.jpg" alt="Screenshot 3" />
+        </div>
+        <div class="column">
+          <img class="screenshot" src="4.jpg" alt="Screenshot 4" />
+        </div>
+        <div class="column">
+          <img class="screenshot" src="5.jpg" alt="Screenshot 5" />
+        </div>
+      </div>
 
-        <footer>
-            Copyright &copy; 2025 Xiaomei Photo Studio. 保留所有权利 | <a class="icp" href="https://beian.miit.gov.cn/">蜀ICP备2024069188号-2</a>
-        </footer>
+      <h2>联系与反馈</h2>
+      <p>如有任何问题、建议或需要帮助，欢迎随时与我们联系：</p>
+      <ul>
+        <li><strong>邮箱：</strong>xiaomei.eazyidphoto@gmail.com</li>
+        <li>
+          <strong>隐私政策：</strong>查看我们的<a href="privacypolicy.html"
+            >隐私政策</a
+          >
+        </li>
+      </ul>
+
+      <footer>
+        Copyright &copy; 2025 Xiaomei Photo Studio. 保留所有权利 |
+        <a class="icp" href="https://beian.miit.gov.cn/"
+          >蜀ICP备2024069188号-2</a
+        >
+      </footer>
     </div>
-</body>
-
+  </body>
 </html>
