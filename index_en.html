@@ -1,268 +1,270 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      // 使用JavaScript获取屏幕宽度
-      var screenWidth =
-        window.innerWidth ||
-        document.documentElement.clientWidth ||
-        document.body.clientWidth;
-      // 将屏幕宽度输出到控制台
-      console.log("屏幕宽度：" + screenWidth + " 像素");
-    </script>
-    <title>Dentist Games for Kids</title>
-    <style>
-      body {
-        font-family:
-          "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro",
-          "SF Pro Icons", "Apple WebExp Icons Custom", "Apple Legacy Chevron",
-          "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f0f0f0;
-        color: #1d1d1f;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    // 使用JavaScript获取屏幕宽度
+    var screenWidth =
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth;
+    // 将屏幕宽度输出到控制台
+    console.log("屏幕宽度：" + screenWidth + " 像素");
+  </script>
+  <title>Dentist Games for Kids</title>
+  <style>
+    body {
+      font-family:
+        "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro",
+        "SF Pro Icons", "Apple WebExp Icons Custom", "Apple Legacy Chevron",
+        "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      color: #1d1d1f;
+    }
+
+    h2 {
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: 0.024em;
+      font-family:
+        "SF Pro Display", "SF Pro Icons", "Apple WebExp Icons Custom",
+        "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .app-container {
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      /* flex-wrap: wrap */
+
+      margin: 20px;
+    }
+
+    .app-icon {
+      max-width: 157px;
+      max-height: 157px;
+      width: auto;
+      height: auto;
+
+      /* flex-shrink: 2; */
+
+      margin-right: 20px;
+      border-radius: 22.5%;
+      overflow: hidden;
+    }
+
+    .app-icon img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .app-title {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .app-desc {
+      /* margin: 20px auto; */
+      font-size: 20px;
+    }
+
+    .row {
+      display: -webkit-flex;
+      display: flex;
+      justify-content: space-around;
+      /* 水平居中 */
+      align-items: center;
+      /* 垂直居中 */
+      flex-wrap: wrap;
+    }
+
+    /* 当屏幕宽度小于500像素时应用这些样式 */
+    @media screen and (max-width: 499px) {
+      .container {
+        max-width: 100%;
+        margin: 0px auto;
+        padding: 20px;
+        background-color: #fff;
       }
 
-      h2 {
-        font-size: 20px;
-        line-height: 1.2;
-        font-weight: 700;
-        letter-spacing: 0.024em;
-        font-family:
-          "SF Pro Display", "SF Pro Icons", "Apple WebExp Icons Custom",
-          "Helvetica Neue", Helvetica, Arial, sans-serif;
+      .column {
+        margin: 10px auto;
+        background-color: white;
       }
 
-      p {
-        line-height: 1.6;
-      }
-
-      .app-container {
-        display: -webkit-flex;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        /* flex-wrap: wrap */
-
-        margin: 20px;
-      }
-
-      .app-icon {
-        max-width: 157px;
-        max-height: 157px;
-        width: auto;
+      .screenshot {
+        width: 260px;
         height: auto;
-
-        /* flex-shrink: 2; */
-
-        margin-right: 20px;
-        border-radius: 22.5%;
+        display: block;
+        border-radius: 20px;
         overflow: hidden;
       }
+    }
 
-      .app-icon img {
-        width: 100%;
-        height: 100%;
+    /* 当屏幕宽度大于500像素时应用这些样式 */
+    @media screen and (min-width: 500px) {
+      .container {
+        max-width: 1100px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .column {
+        margin: 10px auto;
+        flex: auto;
+        background-color: white;
+      }
+
+      .screenshot {
+        width: 200px;
+        height: auto;
         display: block;
+        border-radius: 20px;
+        overflow: hidden;
       }
+    }
 
-      .app-title {
-        width: 100%;
-        height: 100%;
-        display: block;
-      }
+    ul {
+      list-style-type: disc;
+      padding: 0px;
+      margin: 20px;
+    }
 
-      .app-desc {
-        /* margin: 20px auto; */
-        font-size: 20px;
-      }
+    li {
+      line-height: 2;
+    }
 
-      .row {
-        display: -webkit-flex;
-        display: flex;
-        justify-content: space-around;
-        /* 水平居中 */
-        align-items: center;
-        /* 垂直居中 */
-        flex-wrap: wrap;
-      }
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #ccc;
+      font-size: 14px;
+    }
+  </style>
+</head>
 
-      /* 当屏幕宽度小于500像素时应用这些样式 */
-      @media screen and (max-width: 499px) {
-        .container {
-          max-width: 100%;
-          margin: 0px auto;
-          padding: 20px;
-          background-color: #fff;
-        }
-
-        .column {
-          margin: 10px auto;
-          background-color: white;
-        }
-
-        .screenshot {
-          width: 260px;
-          height: auto;
-          display: block;
-          border-radius: 20px;
-          overflow: hidden;
-        }
-      }
-
-      /* 当屏幕宽度大于500像素时应用这些样式 */
-      @media screen and (min-width: 500px) {
-        .container {
-          max-width: 1100px;
-          margin: 20px auto;
-          padding: 20px;
-          background-color: #fff;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .column {
-          margin: 10px auto;
-          flex: auto;
-          background-color: white;
-        }
-
-        .screenshot {
-          width: 200px;
-          height: auto;
-          display: block;
-          border-radius: 20px;
-          overflow: hidden;
-        }
-      }
-
-      ul {
-        list-style-type: disc;
-        padding: 0px;
-        margin: 20px;
-      }
-
-      li {
-        line-height: 2;
-      }
-
-      footer {
-        text-align: center;
-        margin-top: 20px;
-        padding-top: 20px;
-        border-top: 1px solid #ccc;
-        font-size: 14px;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="container">
-      <!-- 应用程序图标 -->
-      <div class="app-container">
-        <div class="app-icon">
-          <img src="./en/appicon_en.jpg" alt="App Icon" />
-        </div>
-        <h1 class="app-title">Dentist Games for Kids</h1>
+<body>
+  <div class="container">
+    <!-- 应用程序图标 -->
+    <div class="app-container">
+      <div class="app-icon">
+        <img src="./en/appicon_en.jpg" alt="App Icon" />
       </div>
-
-      <div class="app-desc">
-        <p>Help little ones learn healthy habits through play!</p>
-      </div>
-
-      <p>
-        Dentist Games for Kids is an educational role-playing experience
-        designed for children aged 3–8. By simulating a real dental clinic,
-        children help adorable animal friends solve their dental problems while
-        overcoming their fears of the dentist.
-      </p>
-
-      <h4>Key Features</h4>
-      <ul>
-        <li>
-          <strong>Educational Roleplay:</strong> Children learn about oral
-          hygiene and dental tools in a fun, stress-free environment.
-        </li>
-        <li>
-          <strong>Three Animal Patients:</strong> Treat the Crocodile, the
-          Rabbit, and the Hippo, each with unique dental needs.
-        </li>
-        <li>
-          <strong>Interactive Tools:</strong> Use the X-ray machine, dental
-          drill, toothbrush, and more through intuitive touch-and-drag controls.
-        </li>
-        <li>
-          <strong>Stunning Animations:</strong> Smooth, high-quality zooming
-          effects make the clinic feel alive and engaging.
-        </li>
-      </ul>
-
-      <h4>Safety & Quality</h4>
-      <ul>
-        <li>
-          <strong>100% Ad-Free:</strong> We guarantee a pure gaming experience
-          with zero third-party advertisements.
-        </li>
-        <li>
-          <strong>Child-Safe Design:</strong> No data collection and a secure
-          Parental Gate for all external links and purchases.
-        </li>
-        <li>
-          <strong>Simple Navigation:</strong> Designed specifically for toddlers
-          and preschoolers to play independently.
-        </li>
-      </ul>
-
-      <h4>How to Play</h4>
-      <ul>
-        <li>
-          Select a Patient: Choose an animal friend from the waiting room.
-        </li>
-        <li>Diagnose: Use the X-ray machine to find hidden dental issues.</li>
-        <li>
-          Treat: Brush away bacteria, clean cavities, or apply braces to fix
-          their smiles.
-        </li>
-        <li>
-          Finish: Watch the animal's happy reaction once their teeth are healthy
-          again!
-        </li>
-      </ul>
-
-      <h4>Screenshots:</h4>
-
-      <div class="row">
-        <div class="column">
-          <img class="screenshot" src="./en/1.jpg" alt="Screenshot 1" />
-        </div>
-        <div class="column">
-          <img class="screenshot" src="./en/2.jpg" alt="Screenshot 2" />
-        </div>
-        <div class="column">
-          <img class="screenshot" src="./en/3.jpg" alt="Screenshot 3" />
-        </div>
-        <div class="column">
-          <img class="screenshot" src="./en/4.jpg" alt="Screenshot 4" />
-        </div>
-      </div>
-
-      <h4>Support & Feedback</h4>
-      <p>
-        If you have any questions, suggestions, or need assistance, please feel
-        free to contact us:
-      </p>
-      <ul>
-        <li><strong>Email:</strong> xiaomei.eazyidphoto@gmail.com</li>
-        <li>
-          <strong>Privacy Policy:</strong> See our
-          <a href="privacypolicy_en.html">privacy policy</a>
-        </li>
-      </ul>
-
-      <footer>
-        Copyright &copy; 2025 Xiaomei Photo Studio. All rights reserved.
-      </footer>
+      <h1 class="app-title">Dentist Games for Kids</h1>
     </div>
-  </body>
+
+    <div class="app-desc">
+      <p>Help little ones learn healthy habits through play!</p>
+    </div>
+
+    <p>
+      Dentist Games for Kids is an educational role-playing experience
+      designed for children aged 3–8. By simulating a real dental clinic,
+      children help adorable animal friends solve their dental problems while
+      overcoming their fears of the dentist.
+    </p>
+
+    <h4>Key Features</h4>
+    <ul>
+      <li>
+        <strong>Educational Roleplay:</strong> Children learn about oral
+        hygiene and dental tools in a fun, stress-free environment.
+      </li>
+      <li>
+        <strong>Three Animal Patients:</strong> Treat the Crocodile, the
+        Rabbit, and the Hippo, each with unique dental needs.
+      </li>
+      <li>
+        <strong>Interactive Tools:</strong> Use the X-ray machine, dental
+        drill, toothbrush, and more through intuitive touch-and-drag controls.
+      </li>
+      <li>
+        <strong>Stunning Animations:</strong> Smooth, high-quality zooming
+        effects make the clinic feel alive and engaging.
+      </li>
+    </ul>
+
+    <h4>Safety & Quality</h4>
+    <ul>
+      <li>
+        <strong>100% Ad-Free:</strong> We guarantee a pure gaming experience
+        with zero third-party advertisements.
+      </li>
+      <li>
+        <strong>Child-Safe Design:</strong> No data collection and a secure
+        Parental Gate for all external links and purchases.
+      </li>
+      <li>
+        <strong>Simple Navigation:</strong> Designed specifically for toddlers
+        and preschoolers to play independently.
+      </li>
+    </ul>
+
+    <h4>How to Play</h4>
+    <ul>
+      <li>
+        Select a Patient: Choose an animal friend from the waiting room.
+      </li>
+      <li>Diagnose: Use the X-ray machine to find hidden dental issues.</li>
+      <li>
+        Treat: Brush away bacteria, clean cavities, or apply braces to fix
+        their smiles.
+      </li>
+      <li>
+        Finish: Watch the animal's happy reaction once their teeth are healthy
+        again!
+      </li>
+    </ul>
+
+    <h4>Screenshots:</h4>
+
+    <div class="row">
+      <div class="column">
+        <img class="screenshot" src="./en/1.jpg" alt="Screenshot 1" />
+      </div>
+      <div class="column">
+        <img class="screenshot" src="./en/2.jpg" alt="Screenshot 2" />
+      </div>
+      <div class="column">
+        <img class="screenshot" src="./en/3.jpg" alt="Screenshot 3" />
+      </div>
+      <div class="column">
+        <img class="screenshot" src="./en/4.jpg" alt="Screenshot 4" />
+      </div>
+    </div>
+
+    <h4>Support & Feedback</h4>
+    <p>
+      If you have any questions, suggestions, or need assistance, please feel
+      free to contact us:
+    </p>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:xiaomei.eazyidphoto@gmail.com">xiaomei.eazyidphoto@gmail.com</a></li>
+      <li>
+        <strong>Privacy Policy:</strong> See our
+        <a href="privacypolicy_en.html">privacy policy</a>
+      </li>
+    </ul>
+
+    <footer>
+      Copyright &copy; 2025 Xiaomei Photo Studio. All rights reserved.
+    </footer>
+  </div>
+</body>
+
 </html>
