@@ -1,282 +1,276 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      // 使用JavaScript获取屏幕宽度
-      var screenWidth =
-        window.innerWidth ||
-        document.documentElement.clientWidth ||
-        document.body.clientWidth;
-      // 将屏幕宽度输出到控制台
-      console.log("Screen width: " + screenWidth + "px");
-    </script>
-    <title>儿童牙医游戏</title>
-    <style>
-      body {
-        font-family:
-          "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro",
-          "SF Pro Icons", "Apple WebExp Icons Custom", "Apple Legacy Chevron",
-          "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f0f0f0;
-        color: #1d1d1f;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    // 使用JavaScript获取屏幕宽度
+    var screenWidth =
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth;
+    // 将屏幕宽度输出到控制台
+    console.log("Screen width: " + screenWidth + "px");
+  </script>
+  <title>儿童牙医游戏</title>
+  <style>
+    body {
+      font-family:
+        "SF Pro SC", "HanHei SC", "SF Pro Text", "Myriad Set Pro",
+        "SF Pro Icons", "Apple WebExp Icons Custom", "Apple Legacy Chevron",
+        "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      color: #1d1d1f;
+    }
+
+    h2 {
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: 0.024em;
+      font-family:
+        "SF Pro Display", "SF Pro Icons", "Apple WebExp Icons Custom",
+        "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .app-container {
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      /* flex-wrap: wrap */
+
+      margin: 20px;
+    }
+
+    .app-icon {
+      max-width: 157px;
+      max-height: 157px;
+      width: auto;
+      height: auto;
+
+      /* flex-shrink: 2; */
+
+      margin-right: 20px;
+      border-radius: 22.5%;
+      overflow: hidden;
+    }
+
+    .app-icon img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .app-title {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .app-desc {
+      /* margin: 20px auto; */
+    }
+
+    .row {
+      display: -webkit-flex;
+      display: flex;
+      justify-content: space-around;
+      /* 水平居中 */
+      align-items: center;
+      /* 垂直居中 */
+      flex-wrap: wrap;
+    }
+
+    /* 当屏幕宽度小于500像素时应用这些样式 */
+    @media screen and (max-width: 499px) {
+      .container {
+        max-width: 100%;
+        margin: 0px auto;
+        padding: 20px;
+        background-color: #fff;
       }
 
-      h2 {
-        font-size: 20px;
-        line-height: 1.2;
-        font-weight: 700;
-        letter-spacing: 0.024em;
-        font-family:
-          "SF Pro Display", "SF Pro Icons", "Apple WebExp Icons Custom",
-          "Helvetica Neue", Helvetica, Arial, sans-serif;
+      .column {
+        margin: 10px auto;
+        background-color: white;
       }
 
-      p {
-        line-height: 1.6;
-      }
-
-      .app-container {
-        display: -webkit-flex;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        /* flex-wrap: wrap */
-
-        margin: 20px;
-      }
-
-      .app-icon {
-        max-width: 157px;
-        max-height: 157px;
-        width: auto;
+      .screenshot {
+        width: 260px;
         height: auto;
-
-        /* flex-shrink: 2; */
-
-        margin-right: 20px;
-        border-radius: 22.5%;
+        display: block;
+        border-radius: 20px;
         overflow: hidden;
       }
+    }
 
-      .app-icon img {
-        width: 100%;
-        height: 100%;
+    /* 当屏幕宽度大于500像素时应用这些样式 */
+    @media screen and (min-width: 500px) {
+      .container {
+        max-width: 1100px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .column {
+        margin: 10px auto;
+        flex: auto;
+        background-color: white;
+      }
+
+      .screenshot {
+        width: 200px;
+        height: auto;
         display: block;
+        border-radius: 20px;
+        overflow: hidden;
       }
+    }
 
-      .app-title {
-        width: 100%;
-        height: 100%;
-        display: block;
+    ul {
+      list-style-type: none;
+      padding: 0px;
+    }
+
+    li {
+      line-height: 2;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .icp {
+      text-decoration: none;
+      /* Removes the underline */
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    function getQueryParam(param) {
+      var searchParams = new URLSearchParams(window.location.search);
+      return searchParams.get(param);
+    }
+    // 根据语言参数跳转到不同页面
+    function redirectToLanguagePage() {
+      // 假设URL是 http://example.com/?lang=en
+      var lang = getQueryParam("lang");
+      console.log("language: " + lang); // 输出: en
+
+      if (lang === "zh") {
+        //window.location.href = 'index.html';
+      } else {
+        window.location.href = "index_en.html";
       }
+    }
 
-      .app-desc {
-        /* margin: 20px auto; */
-      }
+    // 调用函数进行跳转
+    redirectToLanguagePage();
+  </script>
 
-      .row {
-        display: -webkit-flex;
-        display: flex;
-        justify-content: space-around;
-        /* 水平居中 */
-        align-items: center;
-        /* 垂直居中 */
-        flex-wrap: wrap;
-      }
-
-      /* 当屏幕宽度小于500像素时应用这些样式 */
-      @media screen and (max-width: 499px) {
-        .container {
-          max-width: 100%;
-          margin: 0px auto;
-          padding: 20px;
-          background-color: #fff;
-        }
-
-        .column {
-          margin: 10px auto;
-          background-color: white;
-        }
-
-        .screenshot {
-          width: 260px;
-          height: auto;
-          display: block;
-          border-radius: 20px;
-          overflow: hidden;
-        }
-      }
-
-      /* 当屏幕宽度大于500像素时应用这些样式 */
-      @media screen and (min-width: 500px) {
-        .container {
-          max-width: 1100px;
-          margin: 20px auto;
-          padding: 20px;
-          background-color: #fff;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .column {
-          margin: 10px auto;
-          flex: auto;
-          background-color: white;
-        }
-
-        .screenshot {
-          width: 200px;
-          height: auto;
-          display: block;
-          border-radius: 20px;
-          overflow: hidden;
-        }
-      }
-
-      ul {
-        list-style-type: none;
-        padding: 0px;
-      }
-
-      li {
-        line-height: 2;
-      }
-
-      footer {
-        text-align: center;
-        margin-top: 20px;
-        padding-top: 20px;
-        border-top: 1px solid #ccc;
-        font-size: 14px;
-      }
-
-      .icp {
-        text-decoration: none; /* Removes the underline */
-        color: black;
-      }
-    </style>
-  </head>
-
-  <body>
-    <script>
-      function getQueryParam(param) {
-        var searchParams = new URLSearchParams(window.location.search);
-        return searchParams.get(param);
-      }
-      // 根据语言参数跳转到不同页面
-      function redirectToLanguagePage() {
-        // 假设URL是 http://example.com/?lang=en
-        var lang = getQueryParam("lang");
-        console.log("language: " + lang); // 输出: en
-
-        if (lang === "zh") {
-          //window.location.href = 'index.html';
-        } else {
-          window.location.href = "index_en.html";
-        }
-      }
-
-      // 调用函数进行跳转
-      redirectToLanguagePage();
-    </script>
-
-    <div class="container">
-      <!-- 应用程序图标 -->
-      <div class="app-container">
-        <div class="app-icon">
-          <img src="appicon.jpg" alt="App Icon" />
-        </div>
-        <h1 class="app-title">儿童牙医游戏</h1>
+  <div class="container">
+    <!-- 应用程序图标 -->
+    <div class="app-container">
+      <div class="app-icon">
+        <img src="appicon.jpg" alt="App Icon" />
       </div>
-
-      <div class="app-desc">
-        <p>通过游戏帮助小朋友学习健康习惯！</p>
-      </div>
-
-      <p>
-        儿童牙医游戏是一款专为3-8岁儿童设计的教育角色扮演体验。通过模拟真实的牙科诊所，儿童可以帮助可爱的动物朋友解决牙齿问题，同时克服对牙医的恐惧。
-      </p>
-
-      <h2>主要功能</h2>
-      <ul>
-        <li>
-          <strong>教育角色扮演：</strong
-          >儿童在有趣、无压力的环境中学习口腔卫生和牙科工具的相关知识。
-        </li>
-        <li>
-          <strong>三个动物患者：</strong
-          >治疗鳄鱼、兔子和河马，每个都有独特的牙齿问题。
-        </li>
-        <li>
-          <strong>交互式工具：</strong
-          >通过直观的拖拽控制使用X光机、牙钻、牙刷等多种工具。
-        </li>
-        <li>
-          <strong>精美动画：</strong
-          >流畅的高质量缩放效果使诊所栩栩如生，引人入胜。
-        </li>
-      </ul>
-
-      <h2>安全与质量</h2>
-      <ul>
-        <li><strong>100%无广告：</strong>保证纯净的游戏体验，零第三方广告。</li>
-        <li>
-          <strong>儿童安全设计：</strong
-          >不收集数据，所有外部链接和购买都有安全的家长控制。
-        </li>
-        <li>
-          <strong>简单导航：</strong>专为幼儿和学龄前儿童设计，可独立游玩。
-        </li>
-      </ul>
-
-      <h2>游戏玩法</h2>
-      <ul>
-        <li>选择患者：从等候室选择一个动物朋友。</li>
-        <li>诊断：使用X光机查找隐藏的牙齿问题。</li>
-        <li>治疗：刷去细菌、清理蛀牙或装上牙套来修复他们的笑容。</li>
-        <li>完成：看到动物的快乐反应，因为他们的牙齿现在健康了！</li>
-      </ul>
-
-      <h2>截图</h2>
-
-      <div class="row">
-        <div class="column">
-          <img class="screenshot" src="1.jpg" alt="Screenshot 1" />
-        </div>
-        <div class="column">
-          <img class="screenshot" src="2.jpg" alt="Screenshot 2" />
-        </div>
-        <div class="column">
-          <img class="screenshot" src="3.jpg" alt="Screenshot 3" />
-        </div>
-        <div class="column">
-          <img class="screenshot" src="4.jpg" alt="Screenshot 4" />
-        </div>
-        <div class="column">
-          <img class="screenshot" src="5.jpg" alt="Screenshot 5" />
-        </div>
-      </div>
-
-      <h2>联系与反馈</h2>
-      <p>如有任何问题、建议或需要帮助，欢迎随时与我们联系：</p>
-      <ul>
-        <li><strong>邮箱：</strong>xiaomei.eazyidphoto@gmail.com</li>
-        <li>
-          <strong>隐私政策：</strong>查看我们的<a href="privacypolicy.html"
-            >隐私政策</a
-          >
-        </li>
-      </ul>
-
-      <footer>
-        Copyright &copy; 2025 Xiaomei Photo Studio. 保留所有权利 |
-        <a class="icp" href="https://beian.miit.gov.cn/"
-          >蜀ICP备2024069188号-2</a
-        >
-      </footer>
+      <h1 class="app-title">儿童牙医游戏</h1>
     </div>
-  </body>
+
+    <div class="app-desc">
+      <p>通过游戏帮助小朋友学习健康习惯！</p>
+    </div>
+
+    <p>
+      儿童牙医游戏是一款专为3-8岁儿童设计的教育角色扮演体验。通过模拟真实的牙科诊所，儿童可以帮助可爱的动物朋友解决牙齿问题，同时克服对牙医的恐惧。
+    </p>
+
+    <h2>主要功能</h2>
+    <ul>
+      <li>
+        <strong>教育角色扮演：</strong>儿童在有趣、无压力的环境中学习口腔卫生和牙科工具的相关知识。
+      </li>
+      <li>
+        <strong>三个动物患者：</strong>治疗鳄鱼、兔子和河马，每个都有独特的牙齿问题。
+      </li>
+      <li>
+        <strong>交互式工具：</strong>通过直观的拖拽控制使用X光机、牙钻、牙刷等多种工具。
+      </li>
+      <li>
+        <strong>精美动画：</strong>流畅的高质量缩放效果使诊所栩栩如生，引人入胜。
+      </li>
+    </ul>
+
+    <h2>安全与质量</h2>
+    <ul>
+      <li><strong>100%无广告：</strong>保证纯净的游戏体验，零第三方广告。</li>
+      <li>
+        <strong>儿童安全设计：</strong>不收集数据，所有外部链接和购买都有安全的家长控制。
+      </li>
+      <li>
+        <strong>简单导航：</strong>专为幼儿和学龄前儿童设计，可独立游玩。
+      </li>
+    </ul>
+
+    <h2>游戏玩法</h2>
+    <ul>
+      <li>选择患者：从等候室选择一个动物朋友。</li>
+      <li>诊断：使用X光机查找隐藏的牙齿问题。</li>
+      <li>治疗：刷去细菌、清理蛀牙或装上牙套来修复他们的笑容。</li>
+      <li>完成：看到动物的快乐反应，因为他们的牙齿现在健康了！</li>
+    </ul>
+
+    <h2>截图</h2>
+
+    <div class="row">
+      <div class="column">
+        <img class="screenshot" src="1.jpg" alt="Screenshot 1" />
+      </div>
+      <div class="column">
+        <img class="screenshot" src="2.jpg" alt="Screenshot 2" />
+      </div>
+      <div class="column">
+        <img class="screenshot" src="3.jpg" alt="Screenshot 3" />
+      </div>
+      <div class="column">
+        <img class="screenshot" src="4.jpg" alt="Screenshot 4" />
+      </div>
+      <div class="column">
+        <img class="screenshot" src="5.jpg" alt="Screenshot 5" />
+      </div>
+    </div>
+
+    <h2>联系与反馈</h2>
+    <p>如有任何问题、建议或需要帮助，欢迎随时与我们联系：</p>
+    <ul>
+      <li><strong>邮箱：</strong><a href="mailto:xiaomei.eazyidphoto@gmail.com">xiaomei.eazyidphoto@gmail.com</a></li>
+      <li>
+        <strong>隐私政策：</strong>查看我们的<a href="privacypolicy.html">隐私政策</a>
+      </li>
+    </ul>
+
+    <footer>
+      Copyright &copy; 2025 Xiaomei Photo Studio. 保留所有权利 |
+      <a class="icp" href="https://beian.miit.gov.cn/">蜀ICP备2024069188号-2</a>
+    </footer>
+  </div>
+</body>
+
 </html>
