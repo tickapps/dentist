@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation: Panda Scanner @ SIDC Riyadh 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0047AB;
+            --dark-blue: #002D62;
+            --accent-blue: #007FFF;
+            --light-bg: #f4f7f9;
+            --text-color: #333;
+            --insta-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            margin: 0;
+            padding: 10px; /* 手机端外边距 */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .header-box {
+            border-left: 5px solid var(--primary-blue);
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            color: var(--dark-blue);
+            font-size: 24px;
+            margin: 0 0 10px 0;
+            line-height: 1.2;
+        }
+
+        .event-tag {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 15px;
+            color: #555;
+        }
+
+        /* 核心特性布局 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .feature-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #eee;
+        }
+
+        .feature-item strong {
+            color: var(--primary-blue);
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        /* Instagram 卡片样式 */
+        .social-card {
+            margin: 25px 0;
+            border: 1px solid #e1e1e1;
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .social-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .insta-icon {
+            font-size: 35px;
+            background: var(--insta-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-right: 15px;
+        }
+
+        .insta-text b {
+            color: #262626;
+            display: block;
+            font-size: 14px;
+        }
+
+        .insta-text small {
+            color: #8e8e8e;
+            font-size: 12px;
+        }
+
+        .insta-btn {
+            background: var(--insta-gradient);
+            color: white !important;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* 礼品区块 */
+        .gift-alert {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .gift-alert h3 {
+            margin: 0 0 10px 0;
+            font-size: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 25px;
+            background: #f8f9fa;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+        }
+
+        /* --- 手机端适配关键代码 --- */
+        @media (max-width: 600px) {
+            body { padding: 5px; }
+            .container { margin: 10px auto; border-radius: 10px; }
+            .content { padding: 20px; }
+            h1 { font-size: 20px; }
+            
+            /* 特性网格转为单列 */
+            .feature-grid { grid-template-columns: 1fr; }
+            
+            /* Instagram 卡片转为垂直布局 */
+            .social-card { 
+                flex-direction: column; 
+                text-align: center; 
+                gap: 15px; 
+            }
+            .social-info { flex-direction: column; }
+            .insta-icon { margin-right: 0; margin-bottom: 8px; font-size: 40px; }
+            .insta-btn { width: 100%; box-sizing: border-box; display: block; }
+            
+            .gift-alert h3 { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="pic.jpg" alt="Panda Scanner SIDC Riyadh" class="hero-image">
+
+    <div class="content">
+        <div class="event-tag">📅 February 5 - 7, 2026</div>
+        
+        <div class="header-box">
+            <h1>Join Panda Scanner at SIDC Riyadh</h1>
+            <p><strong>Location:</strong> Safad Medical Booth</p>
+        </div>
+
+        <p>Dear Valued Customer,</p>
+        <p>Greetings from <b>Panda Scanner</b>! We invite you to explore the latest in digital dentistry at <b>SIDC Riyadh</b> with <b>Safad Medical</b>.</p>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <strong>✨ New Updates</strong>
+                Latest software features & improved UI.
+            </div>
+            <div class="feature-item">
+                <strong>🔍 Live Demos</strong>
+                Hands-on experience with Panda scanners.
+            </div>
+        </div>
+
+        <a href="https://www.instagram.com/p/DUATT9nEQBf/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="social-card">
+            <div class="social-info">
+                <i class="fab fa-instagram insta-icon"></i>
+                <div class="insta-text">
+                    <b>Follow us on Instagram</b>
+                    <small>See product highlights & news</small>
+                </div>
+            </div>
+            <span class="insta-btn">View Post</span>
+        </a>
+
+        <div class="gift-alert">
+            <h3>🎁 Special Gift for You!</h3>
+            <p style="color: white; margin-bottom: 0; font-size: 14px;">Visit our booth and experience the Panda Scanner to receive an exclusive gift.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <b>Best regards,<br>Panda Scanner Team</b>
+    </div>
+</div>
+
+</body>
+</html>
