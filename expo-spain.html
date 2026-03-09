@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda Scanner | EXPO DENTAL SPAIN 2026 Invitation</title>
+    <style>
+        :root {
+            --primary-blue: #00469b;
+            --accent-green: #38b000;
+            --text-dark: #1a1a1a;
+            --text-gray: #555;
+            --light-bg: #f4f7f9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            background-color: #d1d8e0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #00469b;
+            padding: 0;
+            text-align: center;
+        }
+
+        .hero img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 40px 30px;
+        }
+
+        h1 {
+            color: var(--primary-blue);
+            font-size: 24px;
+            margin-top: 0;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: var(--text-gray);
+        }
+
+        /* Key Info Box */
+        .info-box {
+            background: var(--light-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 1px solid #e1e8ed;
+        }
+
+        .info-row {
+            display: flex;
+            margin-bottom: 12px;
+            align-items: flex-start;
+        }
+
+        .info-row b {
+            min-width: 100px;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .booth-number {
+            font-size: 1.25em;
+            color: var(--accent-green);
+            font-weight: 800;
+        }
+
+        /* Image Gallery & Maps */
+        .gallery-title {
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin: 40px 0 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .img-container {
+            width: 100%;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .img-container img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Rewards Section */
+        .reward-card {
+            background: #f0f7ff;
+            border: 1px dashed var(--primary-blue);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .reward-tag {
+            background: var(--primary-blue);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-blue);
+            color: white;
+            text-align: center;
+            padding: 50px 30px;
+        }
+
+        .footer h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .content {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="hero">
+            <img src="expo-spain-header.png" alt="Panda Scanner EXPO DENTAL SPAIN">
+        </div>
+
+        <div class="content">
+            <h1>The future of digital dentistry is heading to Madrid!</h1>
+            <p>
+                <b>Panda Scanner</b> cordially invites you to join us at <b>EXPODENTAL SPAIN 2026</b>.
+                We will be showcasing our latest intraoral scanner, designed to bring unprecedented precision and
+                efficiency to your digital workflow. We want you to be part of it!
+            </p>
+
+            <div class="info-box">
+                <div class="info-row">
+                    <b>DATE</b>
+                    <span>March 11 - 13, 2026</span>
+                </div>
+                <div class="info-row">
+                    <b>LOCATION</b>
+                    <span>IFEMA MADRID – Recinto Ferial, Av. Partenón 5, 28042 Madrid</span>
+                </div>
+                <div class="info-row">
+                    <b>BOOTH</b>
+                    <span class="booth-number">#8A21</span>
+                </div>
+            </div>
+
+            <div class="gallery-title">Booth Location</div>
+            <div class="img-container">
+                <img src="expo-spain-map.png" alt="Booth Location Map">
+            </div>
+
+            <div class="reward-card">
+                <span class="reward-tag">LUCKY DRAW</span>
+                <h3 style="margin-top: 5px; color: var(--primary-blue);">Win Exclusive Panda Gifts!</h3>
+                <p style="font-size: 14px; margin-bottom: 15px;">
+                    Experience the future of scanning with us! Simply scan the QR code at our booth and follow <b>Panda
+                        Scanner</b> to get a chance to win exclusive panda-themed gifts.
+                </p>
+                <div class="img-container">
+                    <img src="expo-spain-reward.png" alt="Lucky Draw Prizes">
+                </div>
+                <p style="font-size: 11px; color: #888; font-style: italic;">
+                    *All gifts are subject to availability. While supplies last.
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h2>See you in Madrid!</h2>
+            <p style="font-weight: bold; font-size: 16px; margin-top: 20px;">
+                Panda Scanner Team
+            </p>
+            <div
+                style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 12px;">
+                © 2026 FREQTY | Panda Scanner. All rights reserved.
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
