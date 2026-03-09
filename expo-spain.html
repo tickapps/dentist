@@ -67,6 +67,16 @@
             padding: 25px;
             margin: 25px 0;
             border: 1px solid #e1e8ed;
+
+            /* 核心修改：确保移动端支持选中和复制 */
+            -webkit-user-select: text;
+            /* Safari/Chrome iOS */
+            -moz-user-select: text;
+            /* Firefox */
+            -ms-user-select: text;
+            /* IE/Edge */
+            user-select: text;
+            /* 标准语法 */
         }
 
         .info-row {
@@ -100,13 +110,15 @@
         .img-container {
             width: 100%;
             margin-bottom: 20px;
-            transition: transform 0.3s;
+            cursor: zoom-in;
+            /* 提示可以点击放大 */
         }
 
         .img-container img {
             width: 100%;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            display: block;
         }
 
         /* Rewards Section */
@@ -145,6 +157,45 @@
         .footer p {
             color: rgba(255, 255, 255, 0.8);
             font-size: 14px;
+        }
+
+        /* --- 放大镜/灯箱样式 --- */
+        .lightbox {
+            display: none;
+            /* 默认隐藏 */
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        .lightbox img {
+            max-width: 95%;
+            max-height: 95%;
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+            transform-origin: center center;
+            touch-action: none;
+            cursor: grab;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            color: #fff;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+            line-height: 1;
         }
 
         /* Responsive */
@@ -192,7 +243,7 @@
 
             <div class="gallery-title">Booth Location</div>
             <div class="img-container">
-                <img src="expo-spain-map.png" alt="Booth Location Map">
+                <img src="expo-spain-map.png" alt="Booth Location Map" class="clickable-img">
             </div>
 
             <div class="reward-card">
@@ -203,7 +254,7 @@
                         Scanner</b> to get a chance to win exclusive panda-themed gifts.
                 </p>
                 <div class="img-container">
-                    <img src="expo-spain-reward.png" alt="Lucky Draw Prizes">
+                    <img src="expo-spain-reward.png" alt="Lucky Draw Prizes" class="clickable-img">
                 </div>
                 <p style="font-size: 11px; color: #888; font-style: italic;">
                     *All gifts are subject to availability. While supplies last.
@@ -222,6 +273,206 @@
             </div>
         </div>
     </div>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Enlarged view">
+    </div>
+
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const clickableImages = document.querySelectorAll('.clickable-img');
+
+        let scale = 1;
+        let startDistance = 0;
+
+        let posX = 0;
+        let posY = 0;
+
+        let startX = 0;
+        let startY = 0;
+
+        let isDragging = false;
+
+        function updateTransform() {
+            lightboxImg.style.transform =
+                `translate(${posX}px, ${posY}px) scale(${scale})`;
+        }
+
+        // 打开图片
+        clickableImages.forEach(img => {
+            img.addEventListener('click', (e) => {
+                e.stopPropagation();
+
+                lightboxImg.src = img.src;
+                lightbox.style.display = 'flex';
+
+                document.body.style.overflow = 'hidden';
+
+                resetTransform();
+            });
+        });
+
+        // 重置
+        function resetTransform() {
+            scale = 1;
+            posX = 0;
+            posY = 0;
+            updateTransform();
+        }
+
+        // 关闭
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            resetTransform();
+        }
+
+        // ESC关闭
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+
+        // ======================
+        // PC 鼠标拖动
+        // ======================
+
+        lightboxImg.addEventListener('mousedown', (e) => {
+
+            isDragging = true;
+
+            startX = e.clientX - posX;
+            startY = e.clientY - posY;
+
+            lightboxImg.style.cursor = 'grabbing';
+        });
+
+        document.addEventListener('mousemove', (e) => {
+
+            if (!isDragging) return;
+
+            posX = e.clientX - startX;
+            posY = e.clientY - startY;
+
+            updateTransform();
+        });
+
+        document.addEventListener('mouseup', () => {
+
+            isDragging = false;
+            lightboxImg.style.cursor = 'grab';
+        });
+
+
+        // ======================
+        // 鼠标滚轮缩放
+        // ======================
+
+        lightboxImg.addEventListener('wheel', (e) => {
+
+            e.preventDefault();
+
+            const zoom = e.deltaY > 0 ? 0.9 : 1.1;
+
+            scale *= zoom;
+
+            scale = Math.min(Math.max(scale, 1), 6);
+
+            updateTransform();
+
+        }, { passive: false });
+
+
+        // ======================
+        // 手机拖动
+        // ======================
+
+        lightboxImg.addEventListener('touchstart', (e) => {
+
+            if (e.touches.length === 1) {
+
+                isDragging = true;
+
+                startX = e.touches[0].clientX - posX;
+                startY = e.touches[0].clientY - posY;
+            }
+
+            if (e.touches.length === 2) {
+
+                startDistance = getDistance(e.touches);
+            }
+        });
+
+        lightboxImg.addEventListener('touchmove', (e) => {
+
+            if (e.touches.length === 1 && isDragging) {
+
+                posX = e.touches[0].clientX - startX;
+                posY = e.touches[0].clientY - startY;
+
+                updateTransform();
+            }
+
+            if (e.touches.length === 2) {
+
+                e.preventDefault();
+
+                const newDistance = getDistance(e.touches);
+
+                const zoom = newDistance / startDistance;
+
+                scale *= zoom;
+
+                scale = Math.min(Math.max(scale, 1), 6);
+
+                startDistance = newDistance;
+
+                updateTransform();
+            }
+
+        }, { passive: false });
+
+        lightboxImg.addEventListener('touchend', () => {
+
+            isDragging = false;
+        });
+
+
+        // ======================
+        // 双击放大
+        // ======================
+
+        lightboxImg.addEventListener('dblclick', (e) => {
+
+            if (scale > 1) {
+
+                scale = 1;
+                posX = 0;
+                posY = 0;
+
+            } else {
+
+                scale = 2;
+            }
+
+            updateTransform();
+        });
+
+
+        // ======================
+        // 工具函数
+        // ======================
+
+        function getDistance(touches) {
+
+            const dx = touches[0].clientX - touches[1].clientX;
+            const dy = touches[0].clientY - touches[1].clientY;
+
+            return Math.sqrt(dx * dx + dy * dy);
+        }
+    </script>
 
 </body>
 
