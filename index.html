@@ -4,15 +4,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>
-    // 使用JavaScript获取屏幕宽度
-    var screenWidth =
-      window.innerWidth ||
-      document.documentElement.clientWidth ||
-      document.body.clientWidth;
-    // 将屏幕宽度输出到控制台
-    console.log("Screen width: " + screenWidth + "px");
-  </script>
   <title>儿童牙医游戏</title>
   <style>
     body {
@@ -164,6 +155,25 @@
 
 <body>
   <script>
+
+    function logScreenWidth() {
+      var screenWidth = window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth;
+      console.log("Screen width: " + screenWidth + "px");
+    }
+
+    // 新增：修改标题颜色的方法
+    function changeTitleColor(colorCode) {
+      var title = document.querySelector('.app-title');
+      if (title) {
+        title.style.color = colorCode;
+        return true; // 返回一个基础类型，防止 Swift 报 Code=5 错误
+      }
+      return false;
+    }
+
+
     function getQueryParam(param) {
       var searchParams = new URLSearchParams(window.location.search);
       return searchParams.get(param);
