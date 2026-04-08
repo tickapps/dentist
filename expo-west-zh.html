@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>频泰科技 | 2026西部国际口腔展（成都）邀请函</title>
+    <style>
+        :root {
+            --primary-blue: #00469b;
+            --accent-green: #38b000;
+            --text-dark: #1a1a1a;
+            --text-gray: #555;
+            --light-bg: #f4f7f9;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            background-color: #d1d8e0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 头部横幅 */
+        .hero img {
+            width: 100%;
+            display: block;
+        }
+
+        /* 内容区 */
+        .content {
+            padding: 40px 30px;
+        }
+
+        h1 {
+            color: var(--primary-blue);
+            font-size: 22px;
+            margin-top: 0;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: var(--text-gray);
+            text-align: justify;
+        }
+
+        /* 关键信息框 */
+        .info-box {
+            background: var(--light-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 1px solid #e1e8ed;
+            -webkit-user-select: text;
+            user-select: text;
+        }
+
+        .info-row {
+            display: flex;
+            margin-bottom: 12px;
+            align-items: flex-start;
+        }
+
+        .info-row b {
+            min-width: 80px;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .booth-number {
+            font-size: 1.25em;
+            color: var(--accent-green);
+            font-weight: 800;
+        }
+
+        /* 小标题样式 */
+        .section-title {
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin: 40px 0 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-title::before,
+        .section-title::after {
+            content: "";
+            height: 1px;
+            width: 30px;
+            background: #ccc;
+            margin: 0 15px;
+        }
+
+        .img-container {
+            width: 100%;
+            margin-bottom: 20px;
+            cursor: zoom-in;
+        }
+
+        .img-container img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            display: block;
+        }
+
+        /* --- 培训班特别板块：采用图片深色调 --- */
+        .training-section {
+            background: #4d1d1a;
+            /* 图片背景深红色 */
+            color: #f4e8d1;
+            /* 浅米色文字 */
+            border-radius: 12px;
+            padding: 30px 20px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .training-tag {
+            background: #f4e8d1;
+            color: #4d1d1a;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .training-section h2 {
+            color: #ffffff;
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 10px;
+        }
+
+        .training-desc {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        /* 活动卡片 */
+        .reward-card {
+            background: #f0f7ff;
+            border: 1px dashed var(--primary-blue);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .reward-tag {
+            background: var(--primary-blue);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        /* 页脚 */
+        .footer {
+            background: var(--primary-blue);
+            color: white;
+            text-align: center;
+            padding: 50px 30px;
+        }
+
+        .footer .team-name {
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+        }
+
+        .footer .copyright {
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        /* 灯箱效果 */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        .lightbox img {
+            max-width: 95%;
+            max-height: 95%;
+            transform-origin: center center;
+            touch-action: none;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            color: #fff;
+            font-size: 35px;
+            font-weight: 100;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        @media (max-width: 480px) {
+            .content {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="hero">
+            <img src="expo-west-header-zh.png" alt="频泰科技 西部口腔展">
+        </div>
+
+        <div class="content">
+            <h1>春启蓉城，智汇齿间</h1>
+
+            <p>
+                随着中国西部口腔行业盛会的到来，数字化技术正不断重塑口腔诊疗生态。
+                <b>频泰科技</b> 诚挚邀请合作伙伴及口腔同仁莅临成都，共同探索数字化领域的最新核心创新与前沿成果。
+            </p>
+
+            <div class="info-box">
+                <div class="info-row">
+                    <b>日期</b>
+                    <span>2026年4月8日 — 4月11日</span>
+                </div>
+                <div class="info-row">
+                    <b>地点</b>
+                    <span>成都·中国西部国际博览城</span>
+                </div>
+                <div class="info-row">
+                    <b>展位号</b>
+                    <span class="booth-number"># 5号馆 5F15</span>
+                </div>
+            </div>
+
+            <div class="section-title">展位指引</div>
+            <div class="img-container">
+                <img src="expo-west-map-zh.jpg" alt="展位地图" class="clickable-img">
+            </div>
+
+
+
+            <div class="section-title">现场互动</div>
+            <div class="reward-card">
+                <span class="reward-tag">活动惊喜 · ACTIVITY</span>
+                <h3 style="margin-top: 5px; color: var(--primary-blue);">参与互动 赢取好礼</h3>
+                <p style="font-size: 14px; margin-bottom: 15px;">
+                    现场关注<b>频泰科技</b>官方账号，即可获赠熊猫挂件、定制折扇、公仔等精美礼品。
+                </p>
+                <div class="img-container">
+                    <img src="expo-west-reward-zh.jpg" alt="抽奖活动" class="clickable-img">
+                </div>
+                <p style="font-size: 12px; color: #888; text-align: center; font-weight: bold;">
+                    3D 核心科技 · 重建真实世界
+                </p>
+            </div>
+
+            <div class="section-title">椅旁即刻修复应用培训班</div>
+            <div class="training-section">
+                <span class="training-tag">重磅学术课程</span>
+                <h2>“手把手”系列装备培训班</h2>
+                <div class="training-desc">
+                    <b>口腔必修：椅旁即刻修复实操培训</b><br>
+                    涵盖数字化规范扫描、AI设计、3D打印永久修复体（贴面/嵌体/牙冠）全流程。
+                </div>
+
+                <div class="img-container">
+                    <img src="expo-west-training-zh.png" alt="学术培训详情" class="clickable-img">
+                </div>
+
+                <p style="font-size: 11px; text-align: center; color: #f4e8d1; opacity: 0.6;">
+                    地点：西部国际博览城 6号馆 · 实操区 6
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h2>相约成都，不见不散！</h2>
+            <span class="team-name">频泰科技 团队</span>
+            <div class="copyright">
+                © 2026 FREQTY | Panda Scanner. 版权所有
+            </div>
+        </div>
+    </div>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">✕</span>
+        <img id="lightbox-img" src="" alt="放大查看">
+    </div>
+
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const clickableImages = document.querySelectorAll('.clickable-img');
+
+        let scale = 1, posX = 0, posY = 0, startX = 0, startY = 0, isDragging = false, startDistance = 0;
+
+        function updateTransform() {
+            lightboxImg.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+        }
+
+        clickableImages.forEach(img => {
+            img.addEventListener('click', (e) => {
+                e.stopPropagation();
+                lightboxImg.src = img.src;
+                lightbox.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                scale = 1; posX = 0; posY = 0;
+                updateTransform();
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // 触摸手势逻辑
+        lightboxImg.addEventListener('touchstart', (e) => {
+            if (e.touches.length === 2) {
+                startDistance = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+            } else if (e.touches.length === 1) {
+                isDragging = true;
+                startX = e.touches[0].clientX - posX;
+                startY = e.touches[0].clientY - posY;
+            }
+        });
+
+        lightboxImg.addEventListener('touchmove', (e) => {
+            if (e.touches.length === 2) {
+                e.preventDefault();
+                const dist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+                scale = Math.min(Math.max(scale * (dist / startDistance), 1), 5);
+                startDistance = dist;
+                updateTransform();
+            } else if (e.touches.length === 1 && isDragging) {
+                posX = e.touches[0].clientX - startX;
+                posY = e.touches[0].clientY - startY;
+                updateTransform();
+            }
+        }, { passive: false });
+
+        lightboxImg.addEventListener('touchend', () => { isDragging = false; });
+    </script>
+
+</body>
+
+</html>
