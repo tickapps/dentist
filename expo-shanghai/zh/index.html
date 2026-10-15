@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PANDA | DenTech China 2026</title>
+    <style>
+        :root {
+            --primary-blue: #00469b;
+            --accent-green: #38b000;
+            --text-dark: #1a1a1a;
+            --text-gray: #555;
+            --light-bg: #f4f7f9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            background-color: #d1d8e0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #00469b;
+            padding: 0;
+            text-align: center;
+        }
+
+        .hero img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 40px 30px;
+        }
+
+        h1 {
+            color: var(--primary-blue);
+            font-size: 24px;
+            margin-top: 0;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: var(--text-gray);
+        }
+
+        /* Key Info Box */
+        .info-box {
+            background: var(--light-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 1px solid #e1e8ed;
+
+            /* 允许移动端长按选中文字 */
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+        }
+
+        .info-row {
+            display: flex;
+            margin-bottom: 12px;
+            align-items: flex-start;
+        }
+
+        .info-row b {
+            min-width: 100px;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .booth-number {
+            font-size: 1.25em;
+            color: var(--accent-green);
+            font-weight: 800;
+        }
+
+        /* Image Gallery & Maps */
+        .gallery-title {
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin: 40px 0 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .img-container {
+            width: 100%;
+            margin-bottom: 20px;
+            cursor: zoom-in;
+        }
+
+        .img-container img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            display: block;
+        }
+
+        .feature-list {
+            margin: 0 0 20px;
+            padding-left: 20px;
+            color: var(--text-gray);
+        }
+
+        .feature-list li {
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-blue);
+            color: white;
+            text-align: center;
+            padding: 50px 30px;
+        }
+
+        .footer h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+
+        /* 灯箱样式 */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        .lightbox img {
+            max-width: 95%;
+            max-height: 95%;
+            transform-origin: center center;
+            touch-action: none;
+            cursor: grab;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            color: #fff;
+            font-size: 32px;
+            font-weight: 100;
+            /* 细化按钮 */
+            cursor: pointer;
+            user-select: none;
+            line-height: 1;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 480px) {
+            .content {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="hero">
+            <img src="header.jpg" alt="PANDA亮相DenTech China 2026">
+        </div>
+
+        <div class="content">
+            <h1>相约 DenTech China 2026，体验数字化口腔新升级</h1>
+
+            <p>尊敬的口腔行业同仁：</p>
+
+            <p>2026年10月22日至25日，2026国际口腔器械展览会（DenTech China 2026）将在上海世博展览馆正式举办。</p>
+
+            <p>
+                DenTech
+                China国际口腔器械展览会自1994年创办以来，已成为国内外口腔行业规模领先的品牌展会，至今已成功举办二十八届。展会为牙科厂商与医院、口腔诊疗机构及口腔医生搭建沟通桥梁，是中国口腔领域具有权威性与影响力的年度盛会之一，备受全球牙科产业界关注。
+            </p>
+
+            <p>
+                频泰科技将携PANDA系列口腔数字印模仪及多项数字化口腔解决方案精彩亮相，诚邀您亲临现场，感受数字化口腔技术的智能升级。
+            </p>
+
+            <div class="info-box">
+                <div class="info-row">
+                    <b>展会时间</b>
+                    <span>2026年10月22日至25日</span>
+                </div>
+                <div class="info-row">
+                    <b>展会地点</b>
+                    <span>上海世博展览馆</span>
+                </div>
+                <div class="info-row">
+                    <b>展位号</b>
+                    <span class="booth-number">一号馆 C29-31、C60-62</span>
+                </div>
+            </div>
+
+            <div class="img-container">
+                <img src="poster.jpg" alt="频泰科技PANDA亮相DenTech China 2026展会海报" class="clickable-img">
+            </div>
+
+            <div class="gallery-title">展位位置</div>
+            <div class="img-container">
+                <img src="map.jpg" alt="展位位置地图" class="clickable-img">
+                <!-- <img src="map2.jpg" alt="展位位置地图2" class="clickable-img"> -->
+            </div>
+        </div>
+
+        <div class="footer">
+            <h2>10月22日至25日，诚邀您莅临一号馆C29-31、C60-62展位，与频泰科技相约DenTech China 2026！</h2>
+            <p style="font-weight: bold; font-size: 16px; margin-top: 20px; color:gray;">
+                频泰科技 敬邀
+            </p>
+            <div
+                style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 12px;">
+                © 2026 FREQTY | Panda Scanner. All rights reserved.
+            </div>
+        </div>
+    </div>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">✕</span>
+        <img id="lightbox-img" src="" alt="Enlarged view">
+    </div>
+
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const clickableImages = document.querySelectorAll('.clickable-img');
+
+        let scale = 1, posX = 0, posY = 0, startX = 0, startY = 0, isDragging = false, startDistance = 0;
+
+        function updateTransform() {
+            lightboxImg.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+        }
+
+        clickableImages.forEach(img => {
+            img.addEventListener('click', (e) => {
+                e.stopPropagation();
+                lightboxImg.src = img.src;
+                lightbox.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                scale = 1; posX = 0; posY = 0;
+                updateTransform();
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // 简单的触摸缩放逻辑
+        lightboxImg.addEventListener('touchstart', (e) => {
+            if (e.touches.length === 2) {
+                startDistance = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+            } else if (e.touches.length === 1) {
+                isDragging = true;
+                startX = e.touches[0].clientX - posX;
+                startY = e.touches[0].clientY - posY;
+            }
+        });
+
+        lightboxImg.addEventListener('touchmove', (e) => {
+            if (e.touches.length === 2) {
+                e.preventDefault();
+                const dist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+                scale = Math.min(Math.max(scale * (dist / startDistance), 1), 5);
+                startDistance = dist;
+                updateTransform();
+            } else if (e.touches.length === 1 && isDragging) {
+                posX = e.touches[0].clientX - startX;
+                posY = e.touches[0].clientY - startY;
+                updateTransform();
+            }
+        }, { passive: false });
+
+        lightboxImg.addEventListener('touchend', () => { isDragging = false; });
+    </script>
+
+</body>
+
+</html>
